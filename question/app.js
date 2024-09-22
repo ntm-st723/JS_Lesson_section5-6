@@ -48,12 +48,14 @@ let playerList = [
  console.log(playerList[1].favorites[1] );
 
 // Q5 四則演算
-function trio() {
-  let age = 26 + 33 + 22;
-  console.log(age / 3);
-}
+let arr = [26,33,22];
+let sum = 0;
 
-trio();
+for (let i=0; i<arr.length; i++) {
+  sum += arr[i];
+}
+console.log(sum / arr.length);
+
 
 // Q6 関数
 function sayHello() {
@@ -165,20 +167,24 @@ if (num >= 0) {
 }
 
 // Q4
-let numbers = [];
- for (let numbers = 0; numbers < 100; numbers++) {
-   console.log(numbers);
- }
-
+let result = (maxNum) => {
+  let numbers = [];
+      for (let x = 0; x <= maxNum; x++) {
+          numbers.push(x);
+      }
+      return numbers;
+  };
+  console.log(result(100));
 
 
 // Q5
 let mixed = [4, '2', 5, '8', '9', 0, 1];
+mixed = mixed.filter(function(x) {return typeof x === 'number'});
 
-if (mixed[0] % 2 == 0) {
+if (mixed % 2 == 0) {
   console.log('even');
-} else if  (mixed[2] % 2 == 1) {
+} else if  (mixed % 2 == 1) {
   console.log('odd');
-} else if (mixed[3]){
+} else {
   console.log('not number');
 }
