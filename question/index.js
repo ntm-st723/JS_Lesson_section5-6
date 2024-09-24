@@ -1,7 +1,7 @@
 // #Section5
 // Q1 変数
 let nickname ='なっちゃん';
-let age = '26'
+let age = 26
 let text = '私のニックネームは' + nickname + 'です。年齢は' + age + '歳です。';
 console.log(text);
 
@@ -18,13 +18,13 @@ console.log(languagesText);
 
 
 // Q3 オブジェクト
-// let user = {
-//   name: 'John',
-//   age: 26,
-//   bloodType: 'A',
-//   favorite: 'card',
-// };
-// console.log(user.age);
+let user = {
+  name: 'John',
+  age: 26,
+  bloodType: 'A',
+  favorite: 'card',
+};
+console.log(user.age);
 
 
 // // Q4 配列 × オブジェクト
@@ -78,17 +78,13 @@ sayWorld(function() {
 
 
 // Q7 メソッド
-let user = {
-  name: 'John',
-  age: 26,
-  bloodType: 'A',
-  favorite: 'card',
+user.method = {
   birthday:'2000-09-27',
   sayHello: function() {
-    console.log(' Hello！');
+    console.log('Hello!');
   }
 };
-user.sayHello(); 
+console.log(user.method.sayHello);
 
 // Q8 引数
 // #add メソッド：和（足し算）が7になるように実行
@@ -159,9 +155,9 @@ setTimeout(function(){console.log("Hello World!")},3000);
 // Q3
 let num = 0;
 
-if (num >= 0) {
+if (num > 0) {
   console.log('num is greater than 0');
-} else if (num <= 0) {
+} else if (num < 0) {
   console.log('num is less than 0');
 } else {
   console.log('num is 0');
