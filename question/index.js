@@ -176,11 +176,14 @@ let result = (maxNum) => {
 // Q5
 let mixed = [4, '2', 5, '8', '9', 0, 1];
 mixed = mixed.filter(function(x) {return typeof x === 'number'});
+console.log(mixed);
 
-if (mixed % 2 == 0) {
-  console.log('even');
-} else if  (mixed % 2 == 1) {
-  console.log('odd');
-} else {
-  console.log('not number');
-}
+
+// if (mixed % 2 == 0) {
+//   console.log('even');
+// } else if  (mixed % 2 == 1) {
+//   console.log('odd');
+// } else {
+//   console.log('not number');
+// }
+// console.log(mixed[0]);

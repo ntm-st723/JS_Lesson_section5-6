@@ -48,7 +48,7 @@ let playerList = [
  console.log(playerList[1].favorites[1] );
 
 // Q5 四則演算
-let arr = [26,33,22];
+let arr = [playerList[0].age,playerList[1].age,playerList[2].age];
 let sum = 0;
 
 for (let i=0; i<arr.length; i++) {
@@ -175,12 +175,24 @@ let result = (maxNum) => {
 
 // Q5
 let mixed = [4, '2', 5, '8', '9', 0, 1];
-mixed = mixed.filter(function(x) {return typeof x === 'number'});
+for (let i = 0; i < 7; i++){
+  // console.log(mixed[i]);
+  if (typeof mixed[i] === 'string') {
+    console.log('not number');
+  } else if (typeof mixed[i] === 'number' && mixed[0] % 2 === 0) {
+    console.log('even');
+  } else if (typeof mixed[i] === 'number' && mixed[0] % 2 === 1) {
+    console.log('odd');
+  }
+};
 
-if (mixed % 2 == 0) {
-  console.log('even');
-} else if  (mixed % 2 == 1) {
-  console.log('odd');
-} else {
-  console.log('not number');
-}
+//↑の別の例
+// if (typeof mixed[i] === 'number') {
+//   if (mixed[i] % 2 === 0) {
+//     console.log('even');
+//   } else {
+//     console.log('odd');
+//   }
+// };
+
+
