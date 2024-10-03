@@ -47,14 +47,14 @@ let playerList = [
 ];
  console.log(playerList[1].favorites[1] );
 
-// Q5 四則演算
-let arr = [playerList[0].age,playerList[1].age,playerList[2].age];
+// Q5 四則演算　　ユーザーの数が増えた時も対応できるようにする
+// let arr = [playerList[0].age,playerList[1].age,playerList[2].age];
 let sum = 0;
 
-for (let i=0; i<arr.length; i++) {
-  sum += arr[i];
+for (let i = 0; i<playerList.length;i++) {
+  sum += playerList[i].age;
 }
-console.log(sum / arr.length);
+console.log(sum / playerList.length);
 
 
 // Q6 関数
@@ -65,25 +65,33 @@ function sayHello() {
 sayHello();
 
 // 変数 sayWorld に World とコンソールに出力する無名関数を代入し、実行してください。
-function sayWorld (callback) {
-  console.log('sayWorld');
-  callback();
-}
+// 関数の定義の仕方　→　function 名前　()
 
-sayWorld(function() {
+let sayWorld = function(){
   console.log('World');
-});
+}
+sayWorld();
 
+// function sayWorld(){
+//   console.log('World');
+// }
+// sayWorld();
 
+let introduce = function(){
+  console.log('こんにちは！');
+}
+introduce();
 
-// Q7 メソッド
-user.method = {
-  birthday:'2000-09-27',
-  sayHello: function() {
+// Q7 メソッド 追加の書き方に修正する userの中にアクセスする
+
+user.birthday = '2000-09-27';
+user.sayHello = function() {
     console.log('Hello!');
-  }
 };
-console.log(user.method.sayHello);
+user.sayHello();
+
+
+
 
 // Q8 引数
 // #add メソッド：和（足し算）が7になるように実行
@@ -111,7 +119,7 @@ calc.divide = function(x,y) {
 }
 calc.divide(25,5);
 
-// Q9 返り値
+// Q9 返り値　↓x,yは仮引数 5と3は実引数
 function remainder(x,y) {
  console.log(x % y);
  return x % y;
@@ -142,6 +150,8 @@ console.log(`5を3で割った余りは${remainder(5,3)}です`)
 // #Section6
 // Q1
 Math.floor(Math.random() * (9 + 1));
+// console.log(Math.random());
+// console.log(Math.random() * 10);
 let randomNum = Math.floor(Math.random() * (9 + 1));
 
 console.log(randomNum);
@@ -175,24 +185,13 @@ let result = (maxNum) => {
 
 // Q5
 let mixed = [4, '2', 5, '8', '9', 0, 1];
-for (let i = 0; i < 7; i++){
-  // console.log(mixed[i]);
-  if (typeof mixed[i] === 'string') {
-    console.log('not number');
-  } else if (typeof mixed[i] === 'number' && mixed[0] % 2 === 0) {
+for (let i = 0; i < 7; i++) {
+if (typeof mixed[i] === 'number') {
+  if (mixed[i] % 2 === 0) {
     console.log('even');
-  } else if (typeof mixed[i] === 'number' && mixed[0] % 2 === 1) {
+  } else {
     console.log('odd');
   }
-};
-
-//↑の別の例
-// if (typeof mixed[i] === 'number') {
-//   if (mixed[i] % 2 === 0) {
-//     console.log('even');
-//   } else {
-//     console.log('odd');
-//   }
-// };
-
+ };
+}
 
