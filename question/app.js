@@ -1,3 +1,4 @@
+
 // #Section5
 // Q1 変数
 let nickname ='なっちゃん';
@@ -196,4 +197,3 @@ if (typeof mixed[i] === 'string') {
   }
  };
 }
-
