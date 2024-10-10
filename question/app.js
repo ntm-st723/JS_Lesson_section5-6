@@ -119,13 +119,14 @@ calc.divide = function(x,y) {
 }
 calc.divide(25,5);
 
-// Q9 返り値　↓x,yは仮引数 5と3は実引数
+// Q9 返り値　↓x,yは仮引数 5と3は実引数 ※引数を使う理由：関数で処理した内容を変数に格納することでほかのところで使える
 function remainder(x,y) {
  console.log(x % y);
  return x % y;
 }
 remainder(5,3);
 console.log(`5を3で割った余りは${remainder(5,3)}です`)
+// 関数の処理は変わらないが、引数を変えると結果が変わる
 
 // Q10 スコープ:x is not defined（変数 x が定義されていない）というエラーが出力される理由
 // function foo() {
@@ -150,12 +151,10 @@ console.log(`5を3で割った余りは${remainder(5,3)}です`)
 // #Section6
 // Q1
 Math.floor(Math.random() * (9 + 1));
-// console.log(Math.random());
-// console.log(Math.random() * 10);
+// console.log(Math.random() * (9 + 1));
 let randomNum = Math.floor(Math.random() * (9 + 1));
 
 console.log(randomNum);
-
 
 // Q2
 setTimeout(function(){console.log("Hello World!")},3000);
@@ -168,11 +167,11 @@ if (num > 0) {
   console.log('num is greater than 0')
 } else if (num < 0) {
   console.log('num is less than 0');
-} else if (num === 0) {
+} else {
   console.log('num is 0');
 }
 
-// Q4
+// Q4　push：配列の末尾に追加する
 let result = (maxNum) => {
   let numbers = [];
       for (let x = 0; x <= maxNum; x++) {
@@ -185,7 +184,7 @@ let result = (maxNum) => {
 
 // Q5
 let mixed = [4, '2', 5, '8', '9', 0, 1];
-for (let i = 0; i < 7; i++) {
+for (let i = 0; i < mixed.length; i++) {
 if (typeof mixed[i] === 'string') {
     console.log('not number');
   } else if (typeof mixed[i] === 'number') {
