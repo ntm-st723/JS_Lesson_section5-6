@@ -1,4 +1,3 @@
-
 // #Section5
 // Q1 変数
 let nickname ='なっちゃん';
@@ -48,14 +47,15 @@ let playerList = [
 ];
  console.log(playerList[1].favorites[1] );
 
-// Q5 四則演算　　ユーザーの数が増えた時も対応できるようにする
-// let arr = [playerList[0].age,playerList[1].age,playerList[2].age];
+// Q5 四則演算
+let arr = [26,33,22];
 let sum = 0;
 
-for (let i = 0; i<playerList.length;i++) {
-  sum += playerList[i].age;
+for (let i=0; i<arr.length; i++) {
+  sum += arr[i];
 }
-console.log(sum / playerList.length);
+console.log(sum / arr.length);
+
 
 
 // Q6 関数
@@ -66,33 +66,25 @@ function sayHello() {
 sayHello();
 
 // 変数 sayWorld に World とコンソールに出力する無名関数を代入し、実行してください。
-// 関数の定義の仕方　→　function 名前　()
+function sayWorld (callback) {
+  console.log('sayWorld');
+  callback();
+}
 
-let sayWorld = function(){
+sayWorld(function() {
   console.log('World');
-}
-sayWorld();
+});
 
-// function sayWorld(){
-//   console.log('World');
-// }
-// sayWorld();
 
-let introduce = function(){
-  console.log('こんにちは！');
-}
-introduce();
 
-// Q7 メソッド 追加の書き方に修正する userの中にアクセスする
-
-user.birthday = '2000-09-27';
-user.sayHello = function() {
+// Q7 メソッド
+user.method = {
+  birthday:'2000-09-27',
+  sayHello: function() {
     console.log('Hello!');
+  }
 };
-user.sayHello();
-
-
-
+console.log(user.method.sayHello);
 
 // Q8 引数
 // #add メソッド：和（足し算）が7になるように実行
@@ -120,14 +112,13 @@ calc.divide = function(x,y) {
 }
 calc.divide(25,5);
 
-// Q9 返り値　↓x,yは仮引数 5と3は実引数 ※引数を使う理由：関数で処理した内容を変数に格納することでほかのところで使える
+// Q9 返り値
 function remainder(x,y) {
  console.log(x % y);
  return x % y;
 }
 remainder(5,3);
 console.log(`5を3で割った余りは${remainder(5,3)}です`)
-// 関数の処理は変わらないが、引数を変えると結果が変わる
 
 // Q10 スコープ:x is not defined（変数 x が定義されていない）というエラーが出力される理由
 // function foo() {
@@ -152,10 +143,10 @@ console.log(`5を3で割った余りは${remainder(5,3)}です`)
 // #Section6
 // Q1
 Math.floor(Math.random() * (9 + 1));
-// console.log(Math.random() * (9 + 1));
 let randomNum = Math.floor(Math.random() * (9 + 1));
 
 console.log(randomNum);
+
 
 // Q2
 setTimeout(function(){console.log("Hello World!")},3000);
@@ -165,14 +156,14 @@ setTimeout(function(){console.log("Hello World!")},3000);
 let num = 0;
 
 if (num > 0) {
-  console.log('num is greater than 0')
+  console.log('num is greater than 0');
 } else if (num < 0) {
   console.log('num is less than 0');
 } else {
   console.log('num is 0');
 }
 
-// Q4　push：配列の末尾に追加する
+// Q4
 let result = (maxNum) => {
   let numbers = [];
       for (let x = 0; x <= maxNum; x++) {
@@ -182,17 +173,17 @@ let result = (maxNum) => {
   };
   console.log(result(100));
 
-
 // Q5
 let mixed = [4, '2', 5, '8', '9', 0, 1];
-for (let i = 0; i < mixed.length; i++) {
-if (typeof mixed[i] === 'string') {
-    console.log('not number');
-  } else if (typeof mixed[i] === 'number') {
-  if (mixed[i] % 2 === 0) {
-    console.log('even');
-  } else {
-    console.log('odd');
-  }
- };
-}
+mixed = mixed.filter(function(x) {return typeof x === 'number'});
+console.log(mixed);
+
+
+// if (mixed % 2 == 0) {
+//   console.log('even');
+// } else if  (mixed % 2 == 1) {
+//   console.log('odd');
+// } else {
+//   console.log('not number');
+// }
+// console.log(mixed[0]);
